@@ -1,19 +1,40 @@
+package examen;
+
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Funciones {
 
-    //Declaramos el scanner
+    /**
+     * Declaramos el scanner como un atributo estático
+     */
     static Scanner sc = new Scanner(System.in);
 
-    //Declaramos las variables estáticas
+    //Declaramos los atributos estáticos
+    /**
+     * Atributo donde guardaremos en un array las palabras que el usuario tendrá que adivinar
+     */
     static String[] palabras = {"humanidad", "persona", "hombre", "mujer", "individuo", "cuerpo", "pierna",
             "cabeza", "brazo", "familia"};
+    /**
+     * Atributo donde guardaremos el número de intentos que tendrá el usuario para adivinar la palabra
+     */
     final static int NUMINTENTOS = 7;
+    /**
+     * Atributo donde guardaremos la palabra secreta que el usuario tendrá que adivinar
+     */
     static String palabraSecreta = "";
+    /**
+     * Atributo donde guardaremos la palabra con las letras que el usuario ha acertado
+     */
     static String palabraPista = "";
+    /**
+     * Atributo donde guardaremos las letras que el usuario no ha acertado
+     */
     static String noAcertadas = "";
+
+    //Empezamos a crear los métodos de la clase
 
     /**
      * Método que almacena en la variable palabraSecreta una palabra aleatoria de las almacenadas en el array palabras
@@ -35,9 +56,8 @@ public class Funciones {
     }
 
     /**
-     * Método que pintará por consola el menu de opciones del usuario y
-     *
-     * @return la opción elegida por el mismo
+     * Método que pintará por consola el menu de opciones del usuario y devolverá la opción elegida por el mismo.
+     * @return la opción elegida por el usuario.
      */
     public static int menu() {
         //Declaramos las variables
@@ -56,15 +76,15 @@ public class Funciones {
     }
 
     /**
-     * Método que recibe la
-     * @param letra por parámetro y comprobará si esta se encuentra en la palabra secreta
+     * Método que recibe la una letra por parámetro y comprobará si esta se encuentra en la palabra secreta
+     * @param letra : letra introducida por el usuario por consola.
      */
     public static void compruebaLetra(String letra) {
         //Pasamos la letra introducida por parámetros a minúsculas para no tener problemas al comparar letras
         letra = letra.toLowerCase();
 
         //Si la letra introducida por el usuario se encuentra en la palabra secreta
-        if (palabraSecreta.contains(letra)){
+        if (palabraSecreta.contains(letra)) {
             //Recorremos la palabra secreta
             for (int i = 0; i < palabraSecreta.length(); i++) {
                 //Si la letra de la palabra secreta es igual a la letra introducida por el usuario
@@ -81,8 +101,8 @@ public class Funciones {
 
 
     /**
-     * Método que comprueba si la
-     * @param palabra introducidas por el usuario es igual que la palabraSecreta
+     * Método que comprueba si la palabra introducida por parámetros es igual que la palabra secreta
+     * @param palabra : palabra introducida por el usuario por consola.
      */
     public static void compruebaPalabra(String palabra) {
         //Pasamos la palabra introducida por parámetros a minúsculas para no tener problemas al comparar palabras

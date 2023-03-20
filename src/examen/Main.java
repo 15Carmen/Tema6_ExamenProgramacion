@@ -1,3 +1,5 @@
+package examen;
+
 import java.util.Scanner;
 
 public class Main {
@@ -37,7 +39,7 @@ public class Main {
                     Funciones.compruebaPalabra(adivinaPalabra);
                     break;
                 }
-            }
+            }//Fin del switch
 
             //Imprimimos de nuevo la pista
             Funciones.pintarPista();
@@ -47,12 +49,13 @@ public class Main {
                 numeroIntentos--;
                 //Añadimos la letra a la variable letrasUsadas
                 letrasUsadas += letra;
-            }
+            }//Fin del if
 
             //imprimimos cuantos intentos le quedan
             System.out.println("Te quedan: " + numeroIntentos + " intentos");
 
         }while (!adivinaPalabra.equals(Funciones.palabraSecreta) && numeroIntentos>0);
+        //Fin del do-while
 
         System.out.println();   //Salto de línea estético
 
@@ -61,15 +64,15 @@ public class Main {
             System.out.println("¡¡ENHORABUENA!! HAS ACERTADO");
         } else {     //Si el número de errores es igual a 0, acabamos el juego
             System.out.println("GAME OVER");
-        }
+        }//Fin del if
 
         //Cerramos el scanner
         sc.close();
 
-    }
+    }//Fin del main
 
 
 
 
 
-}
+}//Fin de la clase Main
